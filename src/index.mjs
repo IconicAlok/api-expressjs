@@ -29,7 +29,7 @@ app.get("/api/users", (request, response) => {
     if(filter && value) return response.send(
         mockUsers.filter((user)=>user[filter].includes(value))
     );
-    return mockUsers;
+    return response.send(mockUsers);
 });
 
 app.get("/api/users/:id", (request, response) => {
