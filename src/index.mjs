@@ -3,6 +3,7 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 app.use(express.json());
+
 const mockUsers = [
     { id: 1, userName: "anson", displayName: "Anson" },
     { id: 2, userName: "jason", displayName: "Jason" },
@@ -56,7 +57,28 @@ app.get("/api/products", (request, response) => {
     ]);
 });
 
+app.put("/api/users/:id", (request, response) => {
+    const{body, 
+            params: { id }
+        } = request; 
+    const parsedId = parseInt(id);
+    if(isNaN(parsedId)) return response.sendStatus(400); 
+    const findUserIndex = mockUsers.findIndex((user) => user.id === parsedId);   
+    if(findUserIndex === -1) return response.sendStatus(404);  
+    mockUsers[findUserIndex] = {id: parsedId, ...body};
+    return response.sendStatus(200);
+});
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
+
+// localhost:3000
+// localhost:3000/users
+// localhost:3000/products
+// localhost:3000/products?key=value&key2=value2
+
+// PUT
+// PATCH
+// DELET
