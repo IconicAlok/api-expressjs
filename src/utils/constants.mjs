@@ -1,9 +1,9 @@
 export const mockUsers = [
-  { id: 1, userName: "anson", displayName: "Anson" },
-  { id: 2, userName: "jason", displayName: "Jason" },
-  { id: 3, userName: "adam", displayName: "Adam" },
-  { id: 4, userName: "jack", displayName: "Jack" },
-  { id: 5, userName: "tina", displayName: "Tina" },
-  { id: 6, userName: "marilyn", displayName: "Marilyn" },
-  { id: 7, userName: "henry", displayName: "Henry" },
+  { id: 1, username: "anson", displayName: "Anson", password: "hello123" },
+  { id: 2, username: "jason", displayName: "Jason", password: "hello124" },
+  { id: 3, username: "adam", displayName: "Adam", password: "hellohello" },
+  { id: 4, username: "jack", displayName: "Jack", password: "test123" },
+  { id: 5, username: "tina", displayName: "Tina", password: "hello123" },
+  { id: 6, username: "marilyn", displayName: "Marilyn", password: "hello123" },
+  { id: 7, username: "henry", displayName: "Henry", password: "hello123" },
 ];
