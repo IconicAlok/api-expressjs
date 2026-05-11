@@ -16,7 +16,20 @@ const createUserValidationSchema = {
     },
   },
   displayName: {
-    notEmpty: true,
+    notEmpty: {
+      errorMessage: "Display cannot be empty",
+    },
+  },
+  password: {
+    notEmpty: {
+      errorMessage: "Password cannot be empty",
+    },
+    isLength: {
+      options: {
+        min: 6,
+      },
+      errorMessage: "Password must be at least 6",
+    },
   },
 };
 
